@@ -5,12 +5,13 @@ Resumão dos Design Patterns do GOF
 1. [Singleton](#cs1)
 2. [Prototype](#cs2)
 3. [Builder](#cs3)
+4. [Factory Method](#cs4)
 
 ## Criação
 Foco na criação de objetos.
 
 ### Singleton <a name="cs1"></a>
-Garantir que a classe tenha no máximo uma única instância durante todo o ciclo de vida do aplicativo. Utilizar **Singleton**, evita a criação excessiva de elementos estáticos em uma aplicação
+O **Singleton** tem o objetivo de garantir que a classe tenha no máximo uma única instância durante todo o ciclo de vida do aplicativo. Utilizar o Singleton, evita a criação excessiva de elementos estáticos em uma aplicação.
 
 ![Singleton](https://lh3.googleusercontent.com/NBRL42gZakADUrGdzNKtZofk9jXbXZo_ZSv5EwAdP_fOJU8Aq-ZQ0-JJmBKqO0L0klvvtqvKtlA)
 
@@ -79,3 +80,18 @@ A fim de fornecer a classe cliente com uma interface para todos os construtores 
 
 Referências:
 [DevMedia](https://www.devmedia.com.br/design-patterns-aplicando-os-padroes-builder-singleton-e-prototype/31023)
+
+### Factory Method<a name="cs4"></a>
+O **Factory Method** é um padrão que define uma interface para criação de um objeto, mas permite que as subclasses decidam qual classe instanciar.
+
+Um exemplo de utilização do Factory Method são as aplicações Windows, que possuem diferentes banco de dados como Oracle e SQL Server. Assim, sempre que for preciso inserir informações no banco de dados é preciso criar uma SqlConnection ou uma OracleConnection. Se isso for feito em um if-else teremos muito código e uma manutenção complicada.
+
+Para resolver este problema basta utilizar o Factory Method, que possui uma estrutura básica com uma classe abstrata. As subclasses serão derivadas dessa classe e terão a responsabilidade do processo de instanciação.
+
+Este padrão é útil quando a responsabilidade da criação de objetos deve ser das subclasses e quando queremos que o sistema fique com menos acoplamento possível.
+
+![enter image description here](https://lh3.googleusercontent.com/8iMdxKCHwTdRxxL6XyjDtDNX8rKC3pMU6c_Tv9cfY_E-xstGOZxS7TMpqrxxnch_l30kVe6oUq6o)
+
+Referências:
+[DevMedia](https://www.devmedia.com.br/implementando-padroes-criacionais-em-java/34185)
+
