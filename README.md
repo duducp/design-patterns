@@ -6,6 +6,7 @@ Resumão dos Design Patterns do GOF
 2. [Prototype](#cs2)
 3. [Builder](#cs3)
 4. [Factory Method](#cs4)
+5. [Abstract Factory](#cs5)
 
 ## Criação
 Foco na criação de objetos.
@@ -95,3 +96,27 @@ Este padrão é útil quando a responsabilidade da criação de objetos deve ser
 Referências:
 [DevMedia](https://www.devmedia.com.br/implementando-padroes-criacionais-em-java/34185)
 
+### Abstract Factory<a name="cs5"></a>
+O **Abstract Factory** é um padrão permite a criação de famílias de objetos relacionados ou dependentes por meio de uma única interface e sem que a classe concreta seja especificada. Resumidamente o seu objetivo principal é remover código de criação (aquele com a palavra reservada **new**) de nossas classes de negócio. 
+
+Você irá perceber que ele é muito similar ao Factory Method, alias ele tem na composição dele a implementação de vários Factory Method, isso porque o Abstract Factory trabalha com a criação de famílias de objetos.
+
+![Abstract Factory](https://lh3.googleusercontent.com/ZIkXsrq7F2BwnnWwZGCWDB6nVzDW6PssxUZUH8Lc8JZ_TQJC5j3DOVVIDExapJr7uYwu65sreTvi)
+
+No diagrama é possível ver a real diferença entre o Abstract Factory e o Factory Method. Uma família de métodos de criação em Abstract Factory. Outra diferença que é notável é que enquanto Factory Method é comumente utilizado como herança o Abstract Factory é comum como composição.
+
+**Ponto Negativo:**
+-   Implementar um Abstract Factory quando um simples Simple Factory ou Factory Method seriam o suficiente, pode piorar a performance do projeto, ainda mais na leitura dele.
+
+**Ponto Positivo:**
+-   Como com todos os outros padrões de projeto, utilizar o Abstract Factory implica também em adicionar, ao menos em parte do projeto, uma linguagem universal aos programadores. Padrões tendem a serem conhecidos por muitos developers e na leitura do código a identificação de uso de um padrão já alivia na necessidade de ter de destrinchar o código para entendê-lo;
+-   Encapsulamento do código de criação em pontos únicos do projeto removendo também com isso o forte acoplamento entre classes que não deveriam ter um alto nível de relacionamento umas com as outras;
+
+Referências:
+[Thiengo](https://www.thiengo.com.br/padrao-de-projeto-abstract-factory)
+[Brizeno](https://brizeno.wordpress.com/category/padroes-de-projeto/abstract-factory/)
+
+#### Utilitários:
+Exemplo de Padrões de Projetos: [MarcosX](https://github.com/MarcosX/Padr-es-de-Projeto)
+
+Os arquivos estão como um projeto do eclipse, então basta colocar no seu Workspace e fazer o import.
